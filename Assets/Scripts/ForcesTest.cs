@@ -4,70 +4,78 @@ using UnityEngine;
 
 public class ForcesTest : MonoBehaviour
 {
-    void Start()
-    {
-        float boatAngle = 50; //0 360 
-        float sailAngle = 30; // 0 360
-        float wind = 10f; // 0 4
-
-        Vector2 v1 = CalculateV1(sailAngle, wind); // force on sail
-        Vector2 v2 = CalculateV2(boatAngle, sailAngle, wind); // water reaction
-        Vector2 v3 = v1 + v2; // resultant
-
-        Debug.Log("v1= " + v1 + " / mag= " + CalculateMag(v1));
-        Debug.Log("v2= " + v2 + " / mag= " + CalculateMag(v2));
-        Debug.Log("v3= " + v3 + " / mag= " + CalculateMag(v3));
-
-        float yOffset = 5f;
-        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(v1.x, yOffset, v1.y), Color.red, 100f);
-        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(v2.x, yOffset, v2.y), Color.blue, 100f);
-        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(v3.x, yOffset, v3.y), Color.green, 100f);
-    }
-
-    void Update()
-    {
-
-
-    }
+    float boatAngle = 0; //0 360 
+    float sailAngle = 30; // 0 360
+    float wind = 2f; // 0 4
 
     // CurlyPhi = boatAngle
     // Theta = sailAngle
     // mag = wind
 
+    // v1 force on sail
+    // v2 water reaction
+    // v3 resultant force
 
-
-    public Vector2 CalculateV1(float sAngle, float w)
+    void Start()
     {
-        float v1X = w * Mathf.Sin(sAngle);
-        float v1Y = 0;
 
-        float thetaRad = -Mathf.PI / 180 * (sAngle + 90); // Convert degrees to radians and apply transformation
-        float v1XRotated = v1X * Mathf.Cos(thetaRad) - v1Y * Mathf.Sin(thetaRad); // Apply rotation
-        float v1YRotated = v1X * Mathf.Sin(thetaRad) + v1Y * Mathf.Cos(thetaRad);
-        float v1XTranslated = v1XRotated + 0; // Apply translation
-        float v1YTranslated = v1YRotated + 0;
 
-        return new Vector2(v1XTranslated, v1YTranslated);
+        Vector2 v1 = CalculateV1(wind, sailAngle);
+        Vector2 v2 = CalculateV2(wind, sailAngle, boatAngle);
+        Vector2 v3 = v1 + v2;
+
+        float v1Angle = Mathf.Atan2(v1.y, v1.x) * Mathf.Rad2Deg;
+        float v2Angle = Mathf.Atan2(v2.y, v2.x) * Mathf.Rad2Deg;
+        float v3Angle = Mathf.Atan2(v3.y, v3.x) * Mathf.Rad2Deg;
+
+        Debug.Log("sailF  v1= " + v1 + " / mag= " + v1.magnitude + " //// " + v1Angle + " degrees");
+        Debug.Log("waterR v2= " + v2 + " / mag= " + v2.magnitude + " //// " + v2Angle + " degrees");
+        Debug.Log("Result v3= " + v3 + " / mag= " + v3.magnitude + " //// " + v3Angle + " degrees");
+
+        float yOffset = 5f;
+        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v1.x, yOffset, 10 * v1.y), Color.red, 10000f);
+        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v2.x, yOffset, 10 * v2.y), Color.blue, 10000f);
+        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v3.x, yOffset, 10 * v3.y), Color.green, 10000f);
+
+        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(0f, yOffset, 100f), Color.magenta, 10000f);
+        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(100f, yOffset, 0f), Color.magenta, 10000f);
     }
 
-    public Vector2 CalculateV2(float bAngle, float sAngle, float w)
+    void Update()
     {
-        float v2X = 0;
-        float v2Y = -w * Mathf.Sin(Mathf.PI / 180 * sAngle) * Mathf.Cos(Mathf.PI / 180 * (bAngle - sAngle)); // Convert degrees to radians and calculate sine and cosine
-
-        float phiRad = Mathf.PI / 180 * bAngle; // Convert degrees to radians for rotation
-        float v2XRotated = v2X * Mathf.Cos(phiRad) - v2Y * Mathf.Sin(phiRad); // Apply rotation
-        float v2YRotated = v2X * Mathf.Sin(phiRad) + v2Y * Mathf.Cos(phiRad);
-        float v2XTranslated = v2XRotated + 0; // Apply translation
-        float v2YTranslated = v2YRotated + 0;
-
-        return new Vector2(v2XTranslated, v2YTranslated);
     }
 
-    public float CalculateMag(Vector2 v)
+    void OnGUI()
     {
-        return Mathf.Sqrt(v.x * v.x + v.y * v.y); // Calculate magnitude
+        GUI.Label(new Rect(25, 0, 200, 40), "Boat Angle " + boatAngle);
+        GUI.Label(new Rect(25, 20, 200, 40), "Sail Angle " + sailAngle);
+        GUI.Label(new Rect(25, 40, 200, 40), "Wind " + wind);
+    }
 
+    Vector2 CalculateV1(float mag, float theta1_degrees)
+    {
+        float theta1_radians = theta1_degrees * Mathf.Deg2Rad; // convert the angle from degrees to radians
+        Vector2 vector = new Vector2(mag * Mathf.Sin(theta1_radians), 0); // define the original vector
+        Vector2 rotatedVector = RotateVector(vector, theta1_radians + Mathf.PI / 2); // rotate the vector by theta1 + 90 degrees in radians
+        Debug.Log($"Original vector: {vector}, Rotated vector: {rotatedVector}");
+        return rotatedVector;
+    }
+
+    Vector2 CalculateV2(float mag, float theta1_degrees, float phi1_degrees)
+    {
+        float theta1_radians = theta1_degrees * Mathf.Deg2Rad; // convert the angle from degrees to radians
+        float phi1_radians = phi1_degrees * Mathf.Deg2Rad; // convert the angle from degrees to radians
+
+        Vector2 vector = new Vector2(0, -mag * Mathf.Sin(theta1_radians) * Mathf.Cos(phi1_radians - theta1_radians)); // define the original vector
+        Vector2 rotatedVector = RotateVector(vector, phi1_radians); // rotate the vector by phi1 radians around the origin
+        Debug.Log($"Original vector: {vector}, Rotated vector: {rotatedVector}");
+        return rotatedVector;
+    }
+
+    public static Vector2 RotateVector(Vector2 vector, float angle)
+    {
+        Matrix4x4 rotationMatrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), Vector3.one); // create a rotation matrix
+        return rotationMatrix.MultiplyVector(vector); // apply the rotation matrix to the vector and return the result
     }
 
 }

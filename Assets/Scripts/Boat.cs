@@ -40,7 +40,7 @@ public class Boat : MonoBehaviour
         {
             r += mastSpeed * Time.deltaTime;
         }
-        r = Mathf.Clamp(r, 90, 270);
+        //r = Mathf.Clamp(r, 90, 270);
         mastRotation = r;
     }
 
