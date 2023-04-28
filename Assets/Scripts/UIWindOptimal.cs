@@ -13,7 +13,7 @@ public class UIWindOptimal : MonoBehaviour
     {
 
     }
-
+    //@todo obsolete
     void Update()
     {
         if (wind.direction < 20 || wind.direction > 340)
@@ -23,8 +23,9 @@ public class UIWindOptimal : MonoBehaviour
             return;
         }
 
-        float windOptimal = wind.GetWindOptimal(wind.direction);
+        //float windOptimal = wind.GetWindOptimal(wind.direction);
 
+        float windOptimal = 0f;
         float sailAngle = windOptimal;
         if (wind.direction <= 180)
         {
