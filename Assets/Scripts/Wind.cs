@@ -12,19 +12,19 @@ public class Wind : MonoBehaviour
 
     void Update()
     {
-        // float r = direction;
-        // if (Input.GetKey(KeyCode.Q))
-        // {
-        //     r -= rotationSpeed * Time.deltaTime;
-        // }
-        // else if (Input.GetKey(KeyCode.E))
-        // {
-        //     r += rotationSpeed * Time.deltaTime;
-        // }
+        float r = direction;
+        if (Input.GetKey(KeyCode.Z))
+        {
+            r -= rotationSpeed * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.C))
+        {
+            r += rotationSpeed * Time.deltaTime;
+        }
 
-        // r = Utils.DegreesTo360Range(r);
+        r = Utils.DegreesTo360Range(r);
 
-        // direction = r;
+        direction = r;
     }
 
 }

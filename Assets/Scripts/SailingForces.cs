@@ -2,30 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForcesTest : MonoBehaviour
+public class SailingForces : MonoBehaviour
 {
-    public Wind wind;
     public Boat boat;
-    public Hull hull;
-
-    // CurlyPhi = boatAngle //0 360
-    // Theta = sailAngle  // 0 360
-    // mag = wind
-
-    // v1 force on sail
-    // v2 water reaction
-    // v3 resultant force
-
+    public Wind wind;
     void Update()
     {
-        float boatAngle = 360f - hull.rotation;
-        float sailAngle = boat.mastRotation * -1;
+        float boatAngle = 360f - boat.hullRotation; // 0 -> 360 anti clock
+        float sailAngle = boat.mastRotation * -1; // 0 -> 360 anti clock
         Debug.Log("boatAngle= " + boatAngle + " | sailAngle= " + sailAngle);
 
-        Vector2 v1 = CalculateV1(wind.speed, sailAngle);
-        Vector2 v2 = CalculateV2(wind.speed, sailAngle, boatAngle);
+        // v1 sail lift
+        Vector2 v1 = CalculateSailLift(wind.speed, sailAngle);
+        // v2 water resitance
+        Vector2 v2 = CalculateWaterResistance(wind.speed, sailAngle, boatAngle);
+        // v3 resultant force
         Vector2 v3 = v1 + v2;
-
 
         float v1Angle = Mathf.Atan2(v1.y, v1.x) * Mathf.Rad2Deg;
         float v2Angle = Mathf.Atan2(v2.y, v2.x) * Mathf.Rad2Deg;
@@ -40,9 +32,6 @@ public class ForcesTest : MonoBehaviour
         Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v1.x, yOffset, 10 * v1.y), Color.red, lineDuration);
         Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v2.x, yOffset, 10 * v2.y), Color.blue, lineDuration);
         Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v3.x, yOffset, 10 * v3.y), Color.green, lineDuration);
-
-        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(0f, yOffset, 100f), Color.magenta, lineDuration);
-        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(100f, yOffset, 0f), Color.magenta, lineDuration);
     }
 
     void OnGUI()
@@ -52,25 +41,25 @@ public class ForcesTest : MonoBehaviour
         GUI.Label(new Rect(25, 20, 200, 40), "Sail Angle " + boat.mastRotation);
     }
 
-    Vector2 CalculateV1(float mag, float sail_degrees)
+    Vector2 CalculateSailLift(float mag, float sailDegrees)
     {
-        float sail_radians = sail_degrees * Mathf.Deg2Rad;
+        float sailRadians = sailDegrees * Mathf.Deg2Rad;
         // define the original vector
-        Vector2 vector = new Vector2(mag * Mathf.Sin(sail_radians), 0);
+        Vector2 vector = new Vector2(mag * Mathf.Sin(sailRadians), 0);
         // rotate the vector by theta1 + 90 degrees in radians
-        Vector2 rotatedVector = RotateVector(vector, sail_radians + Mathf.PI / 2);
+        Vector2 rotatedVector = RotateVector(vector, sailRadians + Mathf.PI / 2);
         //Debug.Log($"V1 Original vector: {vector}, Rotated vector: {rotatedVector}");
         return rotatedVector;
     }
 
-    Vector2 CalculateV2(float mag, float sail_degrees, float boat_degrees)
+    Vector2 CalculateWaterResistance(float mag, float sailDegrees, float boatDegrees)
     {
-        float sail_radians = sail_degrees * Mathf.Deg2Rad;
-        float boat_radians = boat_degrees * Mathf.Deg2Rad;
+        float sailRadians = sailDegrees * Mathf.Deg2Rad;
+        float boatRadians = boatDegrees * Mathf.Deg2Rad;
         // define the original vector
-        Vector2 vector = new Vector2(0, -mag * Mathf.Sin(sail_radians) * Mathf.Cos(boat_radians - sail_radians));
+        Vector2 vector = new Vector2(0, -mag * Mathf.Sin(sailRadians) * Mathf.Cos(boatRadians - sailRadians));
         // rotate the vector by phi1 radians around the origin
-        Vector2 rotatedVector = RotateVector(vector, boat_radians);
+        Vector2 rotatedVector = RotateVector(vector, boatRadians);
         //Debug.Log($"V2 Original vector: {vector}, Rotated vector: {rotatedVector}");
         return rotatedVector;
     }

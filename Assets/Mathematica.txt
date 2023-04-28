@@ -1,0 +1,73 @@
+Manipulate[
+  Graphics[
+    {   
+      {Cyan, boat[-\[Phi]1]}, 
+      {Black, wind[mag], dotted[-\[Phi]1], dotted[0]}, 
+      {
+        Text[
+          Style["\[CurlyPhi]", Medium], 
+          {Cos[\[Phi]1/2], Sin[\[Phi]1/2]}
+        ], 
+        Circle[
+          {0, 0}, 0.85, {0, \[Phi]1}
+        ]
+      }, 
+      {
+        Text[
+          Style["\[Theta]", Medium], 
+          {0.6 Cos[\[Theta]1/2], 0.6 Sin[\[Theta]1/2]}
+        ], 
+        Circle[
+          {0, 0}, 0.45, {0, \[Theta]1}
+        ], 
+        Thickness[0.02], Darker[Red], sail[-\[Theta]1]  
+      }, 
+
+      If[Or[Forces == "force on the sail", Forces == "all forces"], 
+        {
+          Darker[Red], 
+          Arrow[
+            {
+              {0, 0}, 
+              v1 = RotationTransform[-(-\[Theta]1 - 90 °), {0, 0}][{mag*Sin[\[Theta]1], 0}]
+            }
+          ]
+        }, 
+        Point[{1000, 1000}]
+      ], 
+
+      If[Or[Forces == "water reaction force", Forces == "all forces"], 
+        {
+          Darker[Blue], 
+          Arrow[
+            {
+              {0, 0}, 
+              v2 = RotationTransform[\[Phi]1, {0, 0}][{0, -mag*Sin[\[Theta]1]*Cos[\[Phi]1 - \[Theta]1]}]
+            }
+          ]
+        }, 
+        Point[{1000, 1000}]
+      ], 
+
+      If[Or[Forces == "resultant (net) force", Forces == "all forces"], 
+        {
+          Thickness[0.013], 
+          GrayLevel[0], 
+          Arrow[{{0, 0}, v1 + v2}]
+        }, 
+        Point[{1000, 1000}]
+      ]
+    }, 
+
+    AspectRatio -> Automatic, PlotRange -> {{-1.2, 2.3}, {-1, 1}}, 
+    PlotLabel -> Style["sailing upwind", Large], 
+    ImageSize -> {500, 300}
+    
+  ],
+  {{\[Phi]1, 50 °, "boat angle \[CurlyPhi]"}, 0, 360 °},
+  {{\[Theta]1, 30 °, "sail angle \[Theta]"}, 0, 360 °}, 
+  {{mag, 2.5, "wind velocity"}, 0,  4}, 
+  {{Forces, "all forces", "forces"}, {"all forces", "force on the sail", "water reaction force", "resultant (net) force"}}, 
+  SaveDefinitions -> True, 
+  TrackedSymbols :> Manipulate
+]

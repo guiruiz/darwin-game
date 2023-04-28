@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MastWindIndicator : MonoBehaviour
+public class UIVelocity : MonoBehaviour
 {
-    public Wind wind;
     private float direction = 0f;
+
     void Start()
     {
 
@@ -13,7 +11,7 @@ public class MastWindIndicator : MonoBehaviour
 
     void Update()
     {
-        direction = Utils.DegreesTo360Range(wind.direction);
+
     }
 
     void FixedUpdate()
