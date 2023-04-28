@@ -16,7 +16,7 @@ public class ForcesTest : MonoBehaviour
     // v2 water reaction
     // v3 resultant force
 
-3    void Update()
+    void Update()
     {
         float boatAngle = 360f - hull.rotation;
         float sailAngle = boat.mastRotation * -1;
