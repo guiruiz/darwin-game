@@ -9,7 +9,11 @@ public class SailingForces : MonoBehaviour
     void Update()
     {
         float boatAngle = 360f - boat.hullRotation; // 0 -> 360 anti clock
-        float sailAngle = boat.mastRotation * -1; // 0 -> 360 anti clock
+        boatAngle = Utils.DegreesTo360Range(boatAngle);
+
+        float sailAngle = 360 - boat.mastRotation + boatAngle; // 0 -> 360 anti clock
+        sailAngle = Utils.DegreesTo360Range(sailAngle);
+
         Debug.Log("boatAngle= " + boatAngle + " | sailAngle= " + sailAngle);
 
         // v1 sail lift
@@ -23,22 +27,15 @@ public class SailingForces : MonoBehaviour
         float v2Angle = Mathf.Atan2(v2.y, v2.x) * Mathf.Rad2Deg;
         float v3Angle = Mathf.Atan2(v3.y, v3.x) * Mathf.Rad2Deg;
 
-        Debug.Log("v1= " + v1 + " / mag= " + v1.magnitude + " //// " + v1Angle + " degrees");
-        Debug.Log("v2= " + v2 + " / mag= " + v2.magnitude + " //// " + v2Angle + " degrees");
-        Debug.Log("v3= " + v3 + " / mag= " + v3.magnitude + " //// " + v3Angle + " degrees");
+        //Debug.Log("v1= " + v1 + " / mag= " + v1.magnitude + " //// " + v1Angle + " degrees");
+        //Debug.Log("v2= " + v2 + " / mag= " + v2.magnitude + " //// " + v2Angle + " degrees");
+        //Debug.Log("v3= " + v3 + " / mag= " + v3.magnitude + " //// " + v3Angle + " degrees");
 
         float yOffset = 5f;
         float lineDuration = 0.1f;
         Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v1.x, yOffset, 10 * v1.y), Color.red, lineDuration);
         Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v2.x, yOffset, 10 * v2.y), Color.blue, lineDuration);
         Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v3.x, yOffset, 10 * v3.y), Color.green, lineDuration);
-    }
-
-    void OnGUI()
-    {
-        GUI.Label(new Rect(25, 0, 200, 40), "Wind Angle" + wind.direction);
-        GUI.Label(new Rect(25, 40, 200, 40), "Wind Speed " + wind.speed);
-        GUI.Label(new Rect(25, 20, 200, 40), "Sail Angle " + boat.mastRotation);
     }
 
     Vector2 CalculateSailLift(float mag, float sailDegrees)

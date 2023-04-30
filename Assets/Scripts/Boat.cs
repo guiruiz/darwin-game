@@ -7,7 +7,7 @@ public class Boat : MonoBehaviour
     public Wind wind;
 
     public float hullRotation = 0f;
-    public float mastRotation = 180f;
+    public float mastRotation = -90;
 
     private float hullRotationSpeed = 30f;
     private float mastRotationSpeed = 50f;
@@ -26,8 +26,8 @@ public class Boat : MonoBehaviour
 
     void FixedUpdate()
     {
-        hull.transform.eulerAngles = new Vector3(0f, hullRotation, 0f);
-        mast.transform.eulerAngles = new Vector3(0f, mastRotation, 0f);
+        transform.eulerAngles = new Vector3(0f, hullRotation, 0f);
+        mast.transform.localEulerAngles = new Vector3(0f, mastRotation, 0f);
     }
 
     void RotateMast()
@@ -41,10 +41,9 @@ public class Boat : MonoBehaviour
         {
             r += mastRotationSpeed * Time.deltaTime;
         }
-        //r = Mathf.Clamp(r, 90, 270);
+        r = Mathf.Clamp(r, 90, 270);
         mastRotation = r;
     }
-
 
     void RotateHull()
     {
@@ -62,5 +61,4 @@ public class Boat : MonoBehaviour
 
         hullRotation = r;
     }
-
 }
