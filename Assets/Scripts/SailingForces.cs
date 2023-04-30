@@ -18,9 +18,8 @@ public class SailingForces : MonoBehaviour
 
         float boatRotationAngle = 360 - hullWindAngle - boat.hullRotation;
         boatRotationAngle = Utils.DegreesTo360Range(boatRotationAngle);
-        float boatRotationRadians = boatRotationAngle * Mathf.Deg2Rad;
 
-        Debug.Log("hullWindAngle= " + hullWindAngle + " | sailAngle= " + sailWindAngle + " | x= " + boatRotationAngle);
+        Debug.Log("hullWindAngle= " + hullWindAngle + " | sailAngle= " + sailWindAngle + " | boatRotationAngle= " + boatRotationAngle);
 
         // v1 sail lift
         Vector2 v1 = CalculateSailLift(magnitude, sailWindAngle);
@@ -28,8 +27,9 @@ public class SailingForces : MonoBehaviour
         Vector2 v2 = CalculateWaterResistance(magnitude, sailWindAngle, hullWindAngle);
 
         // rotate coordinates to boat relative rotation
-        v1 = RotateVector(v1, boatRotationRadians);
-        v2 = RotateVector(v2, boatRotationRadians);
+        float boatRotationRadians = boatRotationAngle * Mathf.Deg2Rad;
+        v1 = Utils.RotateVector(v1, boatRotationRadians);
+        v2 = Utils.RotateVector(v2, boatRotationRadians);
 
         // v3 resultant force
         Vector2 v3 = v1 + v2;
@@ -54,7 +54,7 @@ public class SailingForces : MonoBehaviour
         // define the original vector
         Vector2 vector = new Vector2(mag * Mathf.Sin(sailRadians), 0);
         // rotate the vector by theta1 + 90 degrees in radians
-        Vector2 rotatedVector = RotateVector(vector, sailRadians + Mathf.PI / 2);
+        Vector2 rotatedVector = Utils.RotateVector(vector, sailRadians + Mathf.PI / 2);
         //Debug.Log($"V1 Original vector: {vector}, Rotated vector: {rotatedVector}");
         return rotatedVector;
     }
@@ -66,14 +66,8 @@ public class SailingForces : MonoBehaviour
         // define the original vector
         Vector2 vector = new Vector2(0, -mag * Mathf.Sin(sailRadians) * Mathf.Cos(boatRadians - sailRadians));
         // rotate the vector by phi1 radians around the origin
-        Vector2 rotatedVector = RotateVector(vector, boatRadians);
+        Vector2 rotatedVector = Utils.RotateVector(vector, boatRadians);
         //Debug.Log($"V2 Original vector: {vector}, Rotated vector: {rotatedVector}");
         return rotatedVector;
-    }
-
-    public static Vector2 RotateVector(Vector2 vector, float radians)
-    {
-        Matrix4x4 rotationMatrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0, 0, radians * Mathf.Rad2Deg), Vector3.one); // create a rotation matrix
-        return rotationMatrix.MultiplyVector(vector); // apply the rotation matrix to the vector and return the result
     }
 }
