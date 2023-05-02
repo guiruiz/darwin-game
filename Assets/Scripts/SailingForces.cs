@@ -10,42 +10,40 @@ public class SailingForces : MonoBehaviour
     public Vector2 sailForce { get; private set; }
     public Vector2 waterForce { get; private set; }
     public Vector2 resultForce { get; private set; }
-    public Vector2 resultDirection { get; private set; }
+    public float resultDirection { get; private set; } = 0;
 
     void Update()
     {
         float magnitude = wind.speed;
-
         float hullWindDeg = GetHullWindDeg();
         float sailWindDeg = GetSailWindDeg();
 
-        // Calculate Forces
+        // calculate Forces
         // v1: sail, v2: water resistance, v3: resultant
         Vector2 v1 = CalculateSailForce(magnitude, sailWindDeg);
         Vector2 v2 = CalculateWaterForce(magnitude, sailWindDeg, hullWindDeg);
         Vector2 v3 = v1 + v2;
 
+        // calculate thurst direction  
         float thrustDeg = GetThrustDeg(v3);
         float thrustToleranceDeg = 1f;
         bool withinTolerance = Mathf.Abs(hullWindDeg - thrustDeg) <= thrustToleranceDeg;
 
-        // rotate forces relative to hull and wind
-        float windDeg = ToCircleDeg(boat.hullRotation);
-        float forceRelativeDeg = Utils.Normalize360Range(360 - wind.rotation);
-        float forceRelativeRad = DegToRad(forceRelativeDeg);
-        Vector2 rotatedV1 = Utils.RotateVector(v1, forceRelativeRad);
-        Vector2 rotatedV2 = Utils.RotateVector(v2, forceRelativeRad);
-        Vector2 rotatedV3 = Utils.RotateVector(v3, forceRelativeRad);
-
+        // rotate forces relative to wind
+        float windDeg = RotationToDeg(wind.rotation);
+        float windRad = DegToRad(windDeg);
+        Vector2 rotatedV1 = Utils.RotateVector(v1, windRad);
+        Vector2 rotatedV2 = Utils.RotateVector(v2, windRad);
+        Vector2 rotatedV3 = Utils.RotateVector(v3, windRad);
 
         sailForce = rotatedV1;
         waterForce = rotatedV2;
         resultForce = rotatedV3;
+        resultDirection = withinTolerance ? 1 : -1;
 
         //DebugForce("v1", rotatedV1);
         //DebugForce("v2", rotatedV2);
         //DebugForce("v3", rotatedV3);
-
         DrawForce(rotatedV1, Color.red);
         DrawForce(rotatedV2, Color.blue);
         DrawForce(rotatedV3, Color.green);
@@ -75,8 +73,8 @@ public class SailingForces : MonoBehaviour
     private float GetHullWindDeg()
     {
         // 0 -> 360 anti clock
-        float hullDeg = ToCircleDeg(boat.hullRotation);
-        float windDeg = ToCircleDeg(wind.rotation);
+        float hullDeg = RotationToDeg(boat.hullRotation);
+        float windDeg = RotationToDeg(wind.rotation);
         float hullWindDeg = hullDeg - windDeg;
 
         return Utils.Normalize360Range(hullWindDeg);
@@ -84,7 +82,7 @@ public class SailingForces : MonoBehaviour
     private float GetSailWindDeg()
     {
         // 0 -> 360 anti clock
-        float sailDeg = ToCircleDeg(boat.mastRotation);
+        float sailDeg = RotationToDeg(boat.mastRotation);
         float sailWindDeg = sailDeg + GetHullWindDeg();
         return Utils.Normalize360Range(sailWindDeg);
     }
@@ -110,7 +108,7 @@ public class SailingForces : MonoBehaviour
         Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(multiplier * force.x, yOffset, multiplier * force.y), color, lineDuration);
     }
 
-    private float ToCircleDeg(float rotation)
+    private float RotationToDeg(float rotation)
     {
         return 360f - rotation;
     }

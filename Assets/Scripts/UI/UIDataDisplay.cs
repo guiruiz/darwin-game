@@ -6,6 +6,7 @@ public class UIDataDisplay : MonoBehaviour
 {
     public Boat boat;
     public Wind wind;
+    public SailingForces sailingForces;
 
     void OnGUI()
     {
@@ -15,7 +16,8 @@ public class UIDataDisplay : MonoBehaviour
             "",
             "Hull Angle " + boat.hullRotation,
             "Sail Angle " + boat.mastRotation,
-            "Mast Winch " + boat.mastWinch
+            "",
+            "Thrust " + sailingForces.resultDirection
         });
     }
 
