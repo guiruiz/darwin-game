@@ -22,8 +22,5 @@ public class Utils
         return rotationMatrix.MultiplyVector(vector); // apply the rotation matrix to the vector and return the result
     }
 
-    public static float ToCircleAngle(float rotation)
-    {
-        return 360f - rotation;
-    }
+
 }
