@@ -22,7 +22,7 @@ public class Wind : MonoBehaviour
             r += rotationSpeed * Time.deltaTime;
         }
 
-        r = Utils.DegreesTo360Range(r);
+        r = Utils.Normalize360Range(r);
 
         direction = r;
     }

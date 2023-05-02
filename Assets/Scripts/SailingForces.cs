@@ -6,46 +6,44 @@ public class SailingForces : MonoBehaviour
 {
     public Boat boat;
     public Wind wind;
+
     void Update()
     {
         float magnitude = wind.speed;
 
-        float hullWindAngle = 360f - boat.hullRotation + wind.direction; // 0 -> 360 anti clock
-        hullWindAngle = Utils.DegreesTo360Range(hullWindAngle);
+        float hullWindAngle = GetHullWindAngle();
+        float sailWindAngle = GetSailWindAngle();
 
-        float sailWindAngle = 360 - boat.mastRotation + hullWindAngle; // 0 -> 360 anti clock
-        sailWindAngle = Utils.DegreesTo360Range(sailWindAngle);
-
-        float boatRotationAngle = 360 - hullWindAngle - boat.hullRotation;
-        boatRotationAngle = Utils.DegreesTo360Range(boatRotationAngle);
-
-        Debug.Log("hullWindAngle= " + hullWindAngle + " | sailAngle= " + sailWindAngle + " | boatRotationAngle= " + boatRotationAngle);
-
-        // v1 sail lift
         Vector2 v1 = CalculateSailLift(magnitude, sailWindAngle);
-        // v2 water resitance
         Vector2 v2 = CalculateWaterResistance(magnitude, sailWindAngle, hullWindAngle);
-
-        // rotate coordinates to boat relative rotation
-        float boatRotationRadians = boatRotationAngle * Mathf.Deg2Rad;
-        v1 = Utils.RotateVector(v1, boatRotationRadians);
-        v2 = Utils.RotateVector(v2, boatRotationRadians);
-
         // v3 resultant force
         Vector2 v3 = v1 + v2;
 
-        //float v1Angle = Mathf.Atan2(v1.y, v1.x) * Mathf.Rad2Deg;
-        //float v2Angle = Mathf.Atan2(v2.y, v2.x) * Mathf.Rad2Deg;
-        //float v3Angle = Mathf.Atan2(v3.y, v3.x) * Mathf.Rad2Deg;
-        //Debug.Log("v1= " + v1 + " / mag= " + v1.magnitude + " //// " + v1Angle + " degrees");
-        //Debug.Log("v2= " + v2 + " / mag= " + v2.magnitude + " //// " + v2Angle + " degrees");
-        //Debug.Log("v3= " + v3 + " / mag= " + v3.magnitude + " //// " + v3Angle + " degrees");
+        // rotate forces relative to hull and wind
+        float forcesRotationAngle = Utils.Normalize360Range(360 - hullWindAngle - boat.hullRotation);
+        float forcesRotationRadians = forcesRotationAngle * Mathf.Deg2Rad;
+
+        //Debug.Log(forcesRotationAngle + " / " + hullWindAngle + " / " + boat.hullRotation);
+        //Debug.Log(GetHullCircleAngle() + " / " + GetThrustCircleAngle(v3) + " / " + GetHullWindAngle() + " / " + forcesRotationAngle);
+
+
+        Vector2 sailForce = Utils.RotateVector(v1, forcesRotationRadians);
+        Vector2 waterForce = Utils.RotateVector(v2, forcesRotationRadians);
+        Vector2 resultantForce = Utils.RotateVector(v3, forcesRotationRadians);
+        //Debug.Log("hullWindAngle= " + hullWindAngle + " | sailAngle= " + sailWindAngle + " | boatRotationAngle= " + forcesRotationAngle);
+
+        //float sailForceAngle = Mathf.Atan2(sailForce.y, sailForce.x) * Mathf.Rad2Deg;
+        //float waterForceAngle = Mathf.Atan2(waterForce.y, waterForce.x) * Mathf.Rad2Deg;
+        //float resultantForceAngle = Mathf.Atan2(resultantForce.y, resultantForce.x) * Mathf.Rad2Deg;
+        //Debug.Log("sailForce= " + sailForce + " / mag= " + sailForce.magnitude + " //// " + sailForceAngle + " degrees");
+        //Debug.Log("waterForce= " + waterForce + " / mag= " + waterForce.magnitude + " //// " + waterForceAngle + " degrees");
+        //Debug.Log("resultantForce= " + resultantForce + " / mag= " + resultantForce.magnitude + " //// " + resultantForceAngle + " degrees");
 
         float yOffset = 5f;
         float lineDuration = 0.1f;
-        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v1.x, yOffset, 10 * v1.y), Color.red, lineDuration);
-        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v2.x, yOffset, 10 * v2.y), Color.blue, lineDuration);
-        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * v3.x, yOffset, 10 * v3.y), Color.green, lineDuration);
+        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * sailForce.x, yOffset, 10 * sailForce.y), Color.red, lineDuration);
+        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * waterForce.x, yOffset, 10 * waterForce.y), Color.blue, lineDuration);
+        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(10 * resultantForce.x, yOffset, 10 * resultantForce.y), Color.green, lineDuration);
     }
 
     Vector2 CalculateSailLift(float mag, float sailDegrees)
@@ -69,5 +67,38 @@ public class SailingForces : MonoBehaviour
         Vector2 rotatedVector = Utils.RotateVector(vector, boatRadians);
         //Debug.Log($"V2 Original vector: {vector}, Rotated vector: {rotatedVector}");
         return rotatedVector;
+    }
+
+    public float GetHullWindAngle()
+    {
+        // 0 -> 360 anti clock
+        float hullAngle = Utils.ToCircleAngle(boat.hullRotation);
+        float windAngle = Utils.ToCircleAngle(wind.direction);
+        float hullWindAngle = hullAngle - windAngle;
+
+        return Utils.Normalize360Range(hullWindAngle);
+    }
+    public float GetSailWindAngle()
+    {
+        // 0 -> 360 anti clock
+        float sailAngle = Utils.ToCircleAngle(boat.mastRotation);
+        float sailWindAngle = sailAngle + GetHullWindAngle();
+        return Utils.Normalize360Range(sailWindAngle);
+    }
+    public float GetHullCircleAngle()
+    {
+        // 0 -> 360 anti clock
+        return 360 - boat.hullRotation;
+    }
+
+    public float GetThrustCircleAngle(Vector2 rForce)
+    {
+        // 0 -> 360 anti clock
+        float angle = Mathf.Atan2(rForce.y, rForce.x) * Mathf.Rad2Deg;
+        //angle = (angle < 0) ? angle + 360 : angle;
+        //angle = angle - wind.direction;
+        angle = Utils.Normalize360Range(angle);
+
+        return angle;
     }
 }

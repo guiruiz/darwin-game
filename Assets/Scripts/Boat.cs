@@ -8,9 +8,11 @@ public class Boat : MonoBehaviour
 
     public float hullRotation = 0f;
     public float mastRotation = -90;
+    public float mastWinch = 90f;
 
     private float hullRotationSpeed = 30f;
     private float mastRotationSpeed = 50f;
+    private float mastWinchSpeed = 50f;
 
     // @todo add Mast Winch
 
@@ -20,6 +22,10 @@ public class Boat : MonoBehaviour
     {
         RotateMast();
         RotateHull();
+        MastWinchControl();
+
+        mastWinch = Mathf.Clamp(mastWinch, 0, 90);
+        mastRotation = Mathf.Clamp(mastRotation, 180 - mastWinch, 180 + mastWinch);
         //if (wind.direction < 10 && wind.direction > 350) { Debug.Log("tacking"); }
         //else if (wind.direction > 175 && wind.direction < 185) { Debug.Log("gybing"); }
     }
@@ -41,7 +47,6 @@ public class Boat : MonoBehaviour
         {
             r += mastRotationSpeed * Time.deltaTime;
         }
-        r = Mathf.Clamp(r, 90, 270);
         mastRotation = r;
     }
 
@@ -57,8 +62,21 @@ public class Boat : MonoBehaviour
             r += hullRotationSpeed * Time.deltaTime;
         }
 
-        r = Utils.DegreesTo360Range(r);
+        r = Utils.Normalize360Range(r);
 
         hullRotation = r;
+    }
+    void MastWinchControl()
+    {
+        float w = mastWinch;
+        if (Input.GetKey(KeyCode.S))
+        {
+            w -= mastWinchSpeed * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            w += mastWinchSpeed * Time.deltaTime;
+        }
+        mastWinch = w;
     }
 }

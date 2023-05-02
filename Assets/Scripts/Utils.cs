@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Utils
 {
-    public static float DegreesTo360Range(float degrees)
+    public static float Normalize360Range(float degrees)
     {
         float mappedDegrees = degrees % 360.0f;
 
@@ -20,5 +20,10 @@ public class Utils
     {
         Matrix4x4 rotationMatrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0, 0, radians * Mathf.Rad2Deg), Vector3.one); // create a rotation matrix
         return rotationMatrix.MultiplyVector(vector); // apply the rotation matrix to the vector and return the result
+    }
+
+    public static float ToCircleAngle(float rotation)
+    {
+        return 360f - rotation;
     }
 }

@@ -1394,7 +1394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6931542270e851844a6fb335a6080eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 50
+  direction: 90
   speed: 2
 --- !u!4 &1719331064
 Transform:
@@ -1558,6 +1558,7 @@ MonoBehaviour:
   wind: {fileID: 1719331063}
   hullRotation: 0
   mastRotation: 210
+  mastWinch: 90
   velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &1904943771
 MonoBehaviour:

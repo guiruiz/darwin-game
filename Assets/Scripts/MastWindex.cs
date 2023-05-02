@@ -13,7 +13,7 @@ public class MastWindex : MonoBehaviour
 
     void Update()
     {
-        direction = Utils.DegreesTo360Range(wind.direction);
+        direction = Utils.Normalize360Range(wind.direction);
     }
 
     void FixedUpdate()
