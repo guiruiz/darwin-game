@@ -16,7 +16,7 @@ public class UIWindOptimal : MonoBehaviour
     //@todo obsolete
     void Update()
     {
-        if (wind.direction < 20 || wind.direction > 340)
+        if (wind.rotation < 20 || wind.rotation > 340)
         {
             uiIndicator.SetActive(false);
             direction = -1;
@@ -27,7 +27,7 @@ public class UIWindOptimal : MonoBehaviour
 
         float windOptimal = 0f;
         float sailAngle = windOptimal;
-        if (wind.direction <= 180)
+        if (wind.rotation <= 180)
         {
             sailAngle = 270 - sailAngle;
         }

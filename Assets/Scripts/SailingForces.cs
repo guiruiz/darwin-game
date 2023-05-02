@@ -7,9 +7,10 @@ public class SailingForces : MonoBehaviour
     public Boat boat;
     public Wind wind;
 
-    public float sailForce { get; private set; }
-    public float waterForce { get; private set; }
-    public float resultForce { get; private set; }
+    public Vector2 sailForce { get; private set; }
+    public Vector2 waterForce { get; private set; }
+    public Vector2 resultForce { get; private set; }
+    public Vector2 resultDirection { get; private set; }
 
     void Update()
     {
@@ -25,17 +26,21 @@ public class SailingForces : MonoBehaviour
         Vector2 v3 = v1 + v2;
 
         float thrustDeg = GetThrustDeg(v3);
-
         float thrustToleranceDeg = 1f;
         bool withinTolerance = Mathf.Abs(hullWindDeg - thrustDeg) <= thrustToleranceDeg;
 
         // rotate forces relative to hull and wind
         float windDeg = ToCircleDeg(boat.hullRotation);
-        float forceRelativeDeg = Utils.Normalize360Range(360 - wind.direction);
+        float forceRelativeDeg = Utils.Normalize360Range(360 - wind.rotation);
         float forceRelativeRad = DegToRad(forceRelativeDeg);
         Vector2 rotatedV1 = Utils.RotateVector(v1, forceRelativeRad);
         Vector2 rotatedV2 = Utils.RotateVector(v2, forceRelativeRad);
         Vector2 rotatedV3 = Utils.RotateVector(v3, forceRelativeRad);
+
+
+        sailForce = rotatedV1;
+        waterForce = rotatedV2;
+        resultForce = rotatedV3;
 
         //DebugForce("v1", rotatedV1);
         //DebugForce("v2", rotatedV2);
@@ -71,7 +76,7 @@ public class SailingForces : MonoBehaviour
     {
         // 0 -> 360 anti clock
         float hullDeg = ToCircleDeg(boat.hullRotation);
-        float windDeg = ToCircleDeg(wind.direction);
+        float windDeg = ToCircleDeg(wind.rotation);
         float hullWindDeg = hullDeg - windDeg;
 
         return Utils.Normalize360Range(hullWindDeg);

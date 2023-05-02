@@ -10,7 +10,7 @@ public class UIDataDisplay : MonoBehaviour
     void OnGUI()
     {
         GenerateLabels(new string[] {
-            "Wind Angle " + wind.direction,
+            "Wind Angle " + wind.rotation,
             "Wind Speed " + wind.speed,
             "",
             "Hull Angle " + boat.hullRotation,

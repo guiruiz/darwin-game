@@ -12,6 +12,6 @@ public class UIWindDirection : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.eulerAngles = new Vector3(0f, wind.direction, 0f);
+        transform.eulerAngles = new Vector3(0f, wind.rotation, 0f);
     }
 }

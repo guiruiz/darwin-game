@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Wind : MonoBehaviour
 {
-    public float direction = 0f;
+    public float rotation = 0f;
     public float speed = 2f;
     private float rotationSpeed = 30f;
     void Start()
@@ -12,7 +12,7 @@ public class Wind : MonoBehaviour
 
     void Update()
     {
-        float r = direction;
+        float r = rotation;
         if (Input.GetKey(KeyCode.Z))
         {
             r -= rotationSpeed * Time.deltaTime;
@@ -24,7 +24,7 @@ public class Wind : MonoBehaviour
 
         r = Utils.Normalize360Range(r);
 
-        direction = r;
+        rotation = r;
     }
 
 }
