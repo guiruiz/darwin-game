@@ -12,6 +12,7 @@ public class Boat : MonoBehaviour
     public float mastWinch = 90f;
     public float maxSpeed = 2f;
     public float speedMultiplier = 2f;
+    public float sideDragFactor = 0.1f;
 
     public bool moveBoat = false;
 
@@ -42,6 +43,8 @@ public class Boat : MonoBehaviour
         transform.eulerAngles = new Vector3(0f, hullRotation, 0f);
         mast.transform.localEulerAngles = new Vector3(0f, mastRotation, 0f);
         MoveBoat();
+        SideDrag();
+
     }
 
     void RotateMast()
@@ -93,27 +96,32 @@ public class Boat : MonoBehaviour
     {
         Vector3 boatFwd = transform.forward;
         Vector3 resultant = Utils.Vector2To3(sailingForces.resultForce);
-        Vector3 direction = (sailingForces.resultDirection > 0) ? boatFwd : -boatFwd;
-
-        if (Input.GetKey(KeyCode.L))
-        {
-            Debug.Log($"vel: {rb.velocity.magnitude} / rdir {sailingForces.resultDirection} / addForce {resultant} / dir {direction}");
-        }
-
 
         if (rb.velocity.magnitude < maxSpeed && moveBoat)
         {
-
             float m = (sailingForces.resultDirection > 0) ? speedMultiplier : speedMultiplier / 2;
             Vector3 f = resultant * m;
-            rb.AddForce(f);
-            Debug.Log($"m: {m} / f: {resultant * m} / mag: {f.magnitude}");
-
+            rb.AddForce(f, ForceMode.Acceleration);
         }
 
-
-        Utils.DrawForce(transform.position, Utils.Vector3To2(resultant), Color.magenta);
+        Utils.DrawForce(transform.position, Utils.Vector3To2(resultant), Color.green);
         Utils.DrawForce(transform.position, Utils.Vector3To2(rb.velocity), Color.gray);
+    }
+
+    void SideDrag()
+    {
+        // Calculate the dot product of the velocity and the forward vector of the transform
+        float dotProduct = Vector3.Dot(rb.velocity, transform.forward);
+
+        // If the dot product is greater than zero, the Rigidbody is moving forward, so decrease its forward velocity
+        if (Mathf.Abs(dotProduct) > 0.2f)
+        {
+            Vector3 forwardVelocity = transform.forward * dotProduct;
+            Vector3 oppositeForce = -forwardVelocity * sideDragFactor;
+            rb.AddForce(oppositeForce, ForceMode.Impulse);
+
+            Utils.DrawForce(transform.position, Utils.Vector3To2(oppositeForce * 10), Color.red);
+        }
     }
 
     public float GetSpeed()
