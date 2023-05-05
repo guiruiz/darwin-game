@@ -6,6 +6,8 @@ public class Boat : MonoBehaviour
     public GameObject mast;
     public Wind wind;
 
+    public SailingForces sailingForces;
+
     public float hullRotation = 0f;
     public float mastRotation = -90;
     public float mastWinch = 90f;
@@ -14,9 +16,11 @@ public class Boat : MonoBehaviour
     private float mastRotationSpeed = 50f;
     private float mastWinchSpeed = 50f;
 
-    // @todo add Mast Winch
-
-    public Vector3 velocity;
+    private Rigidbody rb;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
@@ -34,16 +38,17 @@ public class Boat : MonoBehaviour
     {
         transform.eulerAngles = new Vector3(0f, hullRotation, 0f);
         mast.transform.localEulerAngles = new Vector3(0f, mastRotation, 0f);
+        MoveBoat();
     }
 
     void RotateMast()
     {
         float r = mastRotation;
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.Q))
         {
             r -= mastRotationSpeed * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.E))
         {
             r += mastRotationSpeed * Time.deltaTime;
         }
@@ -53,11 +58,11 @@ public class Boat : MonoBehaviour
     void RotateHull()
     {
         float r = hullRotation;
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.A))
         {
             r -= hullRotationSpeed * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.E))
+        else if (Input.GetKey(KeyCode.D))
         {
             r += hullRotationSpeed * Time.deltaTime;
         }
@@ -66,17 +71,40 @@ public class Boat : MonoBehaviour
 
         hullRotation = r;
     }
+
     void MastWinchControl()
     {
         float w = mastWinch;
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.W))
         {
             w -= mastWinchSpeed * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.S))
         {
             w += mastWinchSpeed * Time.deltaTime;
         }
         mastWinch = w;
+    }
+
+    void MoveBoat()
+    {
+        Vector3 force = Utils.Vector2To3(sailingForces.resultForce);
+
+        float maxSpeed = 30f;
+        if (rb.velocity.magnitude < maxSpeed)
+        {
+            //rb.AddForce(force);
+        }
+
+        // Debug
+        Vector3 lineOrigin = new Vector3(rb.position.x, 5f, rb.position.z);
+        Vector3 lineEnd = new Vector3(force.x * 10f, 5f, force.z * 10f);
+        Debug.DrawLine(lineOrigin, lineEnd, Color.green, 0.1f);
+        Debug.Log(force);
+    }
+
+    public float GetSpeed()
+    {
+        return rb.velocity.magnitude;
     }
 }

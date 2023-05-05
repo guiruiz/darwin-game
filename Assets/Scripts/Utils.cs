@@ -22,5 +22,9 @@ public class Utils
         return rotationMatrix.MultiplyVector(vector); // apply the rotation matrix to the vector and return the result
     }
 
+    public static Vector3 Vector2To3(Vector2 v)
+    {
+        return new Vector3(v.x, 0f, v.y);
+    }
 
 }

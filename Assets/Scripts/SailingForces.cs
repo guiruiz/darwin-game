@@ -44,9 +44,9 @@ public class SailingForces : MonoBehaviour
         //DebugForce("v1", rotatedV1);
         //DebugForce("v2", rotatedV2);
         //DebugForce("v3", rotatedV3);
-        DrawForce(rotatedV1, Color.red);
-        DrawForce(rotatedV2, Color.blue);
-        DrawForce(rotatedV3, Color.green);
+        //DrawForce(rotatedV1, Color.red);
+        //DrawForce(rotatedV2, Color.blue);
+        //DrawForce(rotatedV3, Color.green);
     }
 
     Vector2 CalculateSailForce(float mag, float sailDeg)
@@ -79,6 +79,7 @@ public class SailingForces : MonoBehaviour
 
         return Utils.Normalize360Range(hullWindDeg);
     }
+
     private float GetSailWindDeg()
     {
         // 0 -> 360 anti clock
