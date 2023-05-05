@@ -16,6 +16,7 @@ public class UIDataDisplay : MonoBehaviour
             "",
             "Hull Angle " + boat.hullRotation,
             "Sail Angle " + boat.mastRotation,
+            "Winch " + boat.mastWinch,
             "Speed " + boat.GetSpeed(),
             "",
             "Thrust " + sailingForces.resultDirection

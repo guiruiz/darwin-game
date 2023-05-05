@@ -27,4 +27,30 @@ public class Utils
         return new Vector3(v.x, 0f, v.y);
     }
 
+    public static Vector2 Vector3To2(Vector3 v)
+    {
+        return new Vector2(v.x, v.z);
+    }
+
+
+    public static void LogForce(string name, Vector2 force)
+    {
+        float forceDeg = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+        Debug.Log($"{name} = {force} / mag= {force.magnitude} / {forceDeg} degrees");
+    }
+
+
+    public static void DrawForce(Vector3 origin, Vector2 force, Color color)
+    {
+        float yOffset = 5f;
+        float lineDuration = 0.1f;
+        float multiplier = 10f;
+
+        force = force * multiplier;
+        Vector3 lineOrigin = new Vector3(origin.x, yOffset, origin.z);
+        Vector3 lineEnd = new Vector3(origin.x + force.x, yOffset, origin.z + force.y);
+
+        Debug.DrawLine(lineOrigin, lineEnd, color, lineDuration);
+    }
+
 }

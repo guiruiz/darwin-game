@@ -6,6 +6,8 @@ public class SailingForces : MonoBehaviour
 {
     public Boat boat;
     public Wind wind;
+    public bool logForces = true;
+    public bool drawForces = true;
 
     public Vector2 sailForce { get; private set; }
     public Vector2 waterForce { get; private set; }
@@ -41,12 +43,20 @@ public class SailingForces : MonoBehaviour
         resultForce = rotatedV3;
         resultDirection = withinTolerance ? 1 : -1;
 
-        //DebugForce("v1", rotatedV1);
-        //DebugForce("v2", rotatedV2);
-        //DebugForce("v3", rotatedV3);
-        //DrawForce(rotatedV1, Color.red);
-        //DrawForce(rotatedV2, Color.blue);
-        //DrawForce(rotatedV3, Color.green);
+        if (logForces)
+        {
+            Utils.LogForce("v1", rotatedV1);
+            Utils.LogForce("v2", rotatedV2);
+            Utils.LogForce("v3", rotatedV3);
+        }
+
+        if (drawForces)
+        {
+            Vector3 boatPos = boat.transform.position;
+            Utils.DrawForce(boatPos, rotatedV1, Color.red);
+            Utils.DrawForce(boatPos, rotatedV2, Color.blue);
+            Utils.DrawForce(boatPos, rotatedV3, Color.green);
+        }
     }
 
     Vector2 CalculateSailForce(float mag, float sailDeg)
@@ -95,19 +105,7 @@ public class SailingForces : MonoBehaviour
         return Utils.Normalize360Range(deg);
     }
 
-    private void DebugForce(string name, Vector2 force)
-    {
-        float forceDeg = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
-        Debug.Log($"{name} = {force} / mag= {force.magnitude} / {forceDeg} degrees");
-    }
 
-    private void DrawForce(Vector2 force, Color color)
-    {
-        float yOffset = 5f;
-        float lineDuration = 0.1f;
-        float multiplier = 10f;
-        Debug.DrawLine(new Vector3(0f, yOffset, 0f), new Vector3(multiplier * force.x, yOffset, multiplier * force.y), color, lineDuration);
-    }
 
     private float RotationToDeg(float rotation)
     {

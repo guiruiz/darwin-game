@@ -5,12 +5,12 @@ public class Boat : MonoBehaviour
     public GameObject hull;
     public GameObject mast;
     public Wind wind;
-
     public SailingForces sailingForces;
 
     public float hullRotation = 0f;
     public float mastRotation = -90;
     public float mastWinch = 90f;
+    public bool moveBoat = false;
 
     private float hullRotationSpeed = 30f;
     private float mastRotationSpeed = 50f;
@@ -75,11 +75,11 @@ public class Boat : MonoBehaviour
     void MastWinchControl()
     {
         float w = mastWinch;
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.S))
         {
             w -= mastWinchSpeed * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.W))
         {
             w += mastWinchSpeed * Time.deltaTime;
         }
@@ -88,19 +88,24 @@ public class Boat : MonoBehaviour
 
     void MoveBoat()
     {
-        Vector3 force = Utils.Vector2To3(sailingForces.resultForce);
+        Vector3 boatFwd = transform.forward;
+        Vector3 resultant = Utils.Vector2To3(sailingForces.resultForce);
+        Vector3 direction = (sailingForces.resultDirection > 0) ? boatFwd : -boatFwd;
 
-        float maxSpeed = 30f;
-        if (rb.velocity.magnitude < maxSpeed)
+        if (Input.GetKey(KeyCode.L))
         {
-            //rb.AddForce(force);
+        }
+        Debug.Log($"vel: {rb.velocity.magnitude} / rdir {sailingForces.resultDirection} / addForce {resultant} / dir {direction}");
+
+
+        float maxSpeed = 2f;
+        if (rb.velocity.magnitude < maxSpeed && moveBoat)
+        {
+            rb.AddForce(resultant);
         }
 
-        // Debug
-        Vector3 lineOrigin = new Vector3(rb.position.x, 5f, rb.position.z);
-        Vector3 lineEnd = new Vector3(force.x * 10f, 5f, force.z * 10f);
-        Debug.DrawLine(lineOrigin, lineEnd, Color.green, 0.1f);
-        Debug.Log(force);
+
+        Utils.DrawForce(transform.position, Utils.Vector3To2(resultant), Color.magenta);
     }
 
     public float GetSpeed()
