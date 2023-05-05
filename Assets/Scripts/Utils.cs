@@ -43,7 +43,7 @@ public class Utils
     public static void DrawForce(Vector3 origin, Vector2 force, Color color)
     {
         float yOffset = 5f;
-        float lineDuration = 0.1f;
+        float lineDuration = 0.05f;
         float multiplier = 10f;
 
         force = force * multiplier;

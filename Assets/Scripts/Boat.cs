@@ -10,6 +10,9 @@ public class Boat : MonoBehaviour
     public float hullRotation = 0f;
     public float mastRotation = -90;
     public float mastWinch = 90f;
+    public float maxSpeed = 2f;
+    public float speedMultiplier = 2f;
+
     public bool moveBoat = false;
 
     private float hullRotationSpeed = 30f;
@@ -44,11 +47,11 @@ public class Boat : MonoBehaviour
     void RotateMast()
     {
         float r = mastRotation;
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.E))
         {
             r -= mastRotationSpeed * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.E))
+        else if (Input.GetKey(KeyCode.Q))
         {
             r += mastRotationSpeed * Time.deltaTime;
         }
@@ -94,18 +97,23 @@ public class Boat : MonoBehaviour
 
         if (Input.GetKey(KeyCode.L))
         {
+            Debug.Log($"vel: {rb.velocity.magnitude} / rdir {sailingForces.resultDirection} / addForce {resultant} / dir {direction}");
         }
-        Debug.Log($"vel: {rb.velocity.magnitude} / rdir {sailingForces.resultDirection} / addForce {resultant} / dir {direction}");
 
 
-        float maxSpeed = 2f;
         if (rb.velocity.magnitude < maxSpeed && moveBoat)
         {
-            rb.AddForce(resultant);
+
+            float m = (sailingForces.resultDirection > 0) ? speedMultiplier : speedMultiplier / 2;
+            Vector3 f = resultant * m;
+            rb.AddForce(f);
+            Debug.Log($"m: {m} / f: {resultant * m} / mag: {f.magnitude}");
+
         }
 
 
         Utils.DrawForce(transform.position, Utils.Vector3To2(resultant), Color.magenta);
+        Utils.DrawForce(transform.position, Utils.Vector3To2(rb.velocity), Color.gray);
     }
 
     public float GetSpeed()
