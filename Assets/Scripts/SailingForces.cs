@@ -17,8 +17,8 @@ public class SailingForces : MonoBehaviour
     void Update()
     {
         float magnitude = wind.speed;
-        float hullWindDeg = GetHullWindDeg();
-        float sailWindDeg = GetSailWindDeg();
+        float hullWindDeg = Utils.GetHullWindDeg(boat, wind);
+        float sailWindDeg = Utils.GetSailWindDeg(boat, wind);
 
         // calculate Forces
         // v1: sail, v2: water resistance, v3: resultant
@@ -31,9 +31,9 @@ public class SailingForces : MonoBehaviour
         float thrustToleranceDeg = 1f;
         bool withinTolerance = Mathf.Abs(hullWindDeg - thrustDeg) <= thrustToleranceDeg;
 
-        // rotate forces relative to wind
-        float windDeg = RotationToDeg(wind.rotation);
-        float windRad = DegToRad(windDeg);
+        // rotate coords from unit circle to world
+        float windDeg = Utils.RotationToDeg(wind.rotation);
+        float windRad = Utils.DegToRad(windDeg);
         Vector2 rotatedV1 = Utils.RotateVector(v1, windRad);
         Vector2 rotatedV2 = Utils.RotateVector(v2, windRad);
         Vector2 rotatedV3 = Utils.RotateVector(v3, windRad);
@@ -61,7 +61,7 @@ public class SailingForces : MonoBehaviour
 
     Vector2 CalculateSailForce(float mag, float sailDeg)
     {
-        float sailRad = DegToRad(sailDeg);
+        float sailRad = Utils.DegToRad(sailDeg);
         // define the original vector
         Vector2 vector = new Vector2(mag * Mathf.Sin(sailRad), 0);
         // rotate the vector by theta1 + 90 degrees in radians
@@ -71,8 +71,8 @@ public class SailingForces : MonoBehaviour
 
     Vector2 CalculateWaterForce(float mag, float sailDeg, float boatDeg)
     {
-        float sailRad = DegToRad(sailDeg);
-        float boatRad = DegToRad(boatDeg);
+        float sailRad = Utils.DegToRad(sailDeg);
+        float boatRad = Utils.DegToRad(boatDeg);
         // define the original vector
         Vector2 vector = new Vector2(0, -mag * Mathf.Sin(sailRad) * Mathf.Cos(boatRad - sailRad));
         // rotate the vector by phi1 radians around the origin
@@ -80,40 +80,10 @@ public class SailingForces : MonoBehaviour
         return rotatedVector;
     }
 
-    private float GetHullWindDeg()
-    {
-        // 0 -> 360 anti clock
-        float hullDeg = RotationToDeg(boat.hullRotation);
-        float windDeg = RotationToDeg(wind.rotation);
-        float hullWindDeg = hullDeg - windDeg;
-
-        return Utils.Normalize360Range(hullWindDeg);
-    }
-
-    private float GetSailWindDeg()
-    {
-        // 0 -> 360 anti clock
-        float sailDeg = RotationToDeg(boat.mastRotation);
-        float sailWindDeg = sailDeg + GetHullWindDeg();
-        return Utils.Normalize360Range(sailWindDeg);
-    }
-
     private float GetThrustDeg(Vector2 rForce)
     {
         // 0 -> 360 anti clock
         float deg = Mathf.Atan2(rForce.y, rForce.x) * Mathf.Rad2Deg;
         return Utils.Normalize360Range(deg);
-    }
-
-
-
-    private float RotationToDeg(float rotation)
-    {
-        return 360f - rotation;
-    }
-
-    private float DegToRad(float deg)
-    {
-        return deg * Mathf.Deg2Rad;
     }
 }

@@ -53,4 +53,32 @@ public class Utils
         Debug.DrawLine(lineOrigin, lineEnd, color, lineDuration);
     }
 
+    public static float RotationToDeg(float rotation)
+    {
+        return 360f - rotation;
+    }
+
+    public static float DegToRad(float deg)
+    {
+        return deg * Mathf.Deg2Rad;
+    }
+
+    public static float GetHullWindDeg(Boat boat, Wind wind)
+    {
+        // 0 -> 360 anti clock
+        float hullDeg = Utils.RotationToDeg(boat.hullRotation);
+        float windDeg = Utils.RotationToDeg(wind.rotation);
+        float hullWindDeg = hullDeg - windDeg;
+
+        return Utils.Normalize360Range(hullWindDeg);
+    }
+
+    public static float GetSailWindDeg(Boat boat, Wind wind)
+    {
+        // 0 -> 360 anti clock
+        float sailDeg = Utils.RotationToDeg(boat.mastRotation);
+        float sailWindDeg = sailDeg + GetHullWindDeg(boat, wind);
+        return Utils.Normalize360Range(sailWindDeg);
+    }
+
 }
