@@ -18,8 +18,8 @@ public class Boat : MonoBehaviour
     private float hullRotationSpeed = 30f;
     private float mastRotationSpeed = 50f;
     private float mastWinchSpeed = 50f;
-
     private Rigidbody rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,13 +27,12 @@ public class Boat : MonoBehaviour
 
     void Update()
     {
-        //RotateMast();
+        // RotateMast();
         RotateHull();
         MastWinchControl();
 
         mastWinch = Mathf.Clamp(mastWinch, 0, 90);
         mastRotation = Mathf.Clamp(mastRotation, 180 - mastWinch, 180 + mastWinch);
-
 
         //if (wind.direction < 10 && wind.direction > 350) { Debug.Log("tacking"); }
         //else if (wind.direction > 175 && wind.direction < 185) { Debug.Log("gybing"); }
@@ -131,8 +130,6 @@ public class Boat : MonoBehaviour
 
     public void RotateMastToAngle(float targetRotation, float rotationSpeed)
     {
-        //mastTargetRotation = targetRotation;
         mastRotation = Mathf.Lerp(mastRotation, targetRotation, rotationSpeed * Time.deltaTime); ;
-
     }
 }

@@ -20,11 +20,11 @@ public class MastBoom : MonoBehaviour
         float realativeWindDeg = Utils.GetSailWindDeg(boat, wind);
         float relativeWindRotation = Utils.DegToRotation(realativeWindDeg);
 
-        if (relativeWindRotation > 180)
+        if (relativeWindRotation > 181)
         {
             boat.RotateMastToAngle(boat.mastRotation - rotationDelta, rotationSpeed);
         }
-        if (relativeWindRotation < 180)
+        if (relativeWindRotation < 179)
         {
             boat.RotateMastToAngle(boat.mastRotation + rotationDelta, rotationSpeed);
 
