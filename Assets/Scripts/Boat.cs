@@ -105,7 +105,7 @@ public class Boat : MonoBehaviour
         }
 
         Utils.DrawForce(transform.position, Utils.Vector3To2(resultant), Color.green);
-        Utils.DrawForce(transform.position, Utils.Vector3To2(rb.velocity), Color.gray);
+        //Utils.DrawForce(transform.position, Utils.Vector3To2(rb.velocity), Color.gray);
     }
 
     void SideDrag()

@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
-  m_Shader: {fileID: -6465566751694194690, guid: 0250ee1c1ecb6ee488df9cc9bbf18760,
+  m_Shader: {fileID: -6465566751694194690, guid: c1c14dcdde640e74db392aed406f93c4,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -82,6 +82,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_2fc08ab74cd64975a31c8da9a53fcdf7_Out_0:
+        m_Texture: {fileID: 2800000, guid: 867f8e6997589974aa419abb002223fb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_fce9fd9aaa424d47b160012534a1186e_Out_0:
         m_Texture: {fileID: 2800000, guid: 867f8e6997589974aa419abb002223fb, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -111,6 +115,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _Float: 1.43
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -127,14 +132,25 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _brightness: 0.5
-    - _distortion: 50
+    - _brightness: 1
+    - _convert: 30.77
+    - _density: 300
+    - _distortion: 500
+    - _noise: 70
+    - _power: 5
     - _rotation: 90
-    - _speed: 0.02
-    - _tilling: 1
+    - _speed: 1
+    - _tilling: 32.2
+    - _waveHeight: 500
+    - _waveLimiter: 300
+    - _waveNoise: 15
+    - _waveSmothness: 500
+    - _waveSpeed: 0.01
     m_Colors:
     - _BaseColor: {r: 0.097172245, g: 0.4758949, b: 0.593, a: 1}
     - _Color: {r: 0.09717221, g: 0.4758948, b: 0.593, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _baseColor: {r: 0.19271965, g: 0.5663598, b: 0.94, a: 1}
+    - _foamColor: {r: 0, g: 0.44156614, b: 0.754717, a: 0}
   m_BuildTextureStacks: []
