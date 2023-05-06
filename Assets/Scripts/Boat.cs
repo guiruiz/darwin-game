@@ -8,14 +8,13 @@ public class Boat : MonoBehaviour
     public SailingForces sailingForces;
 
     public float hullRotation = 0f;
-    public float mastRotation = -90;
+    public float mastRotation = 180f;
     public float mastWinch = 90f;
     public float maxSpeed = 2f;
     public float speedMultiplier = 2f;
     public float sideDragFactor = 0.1f;
 
     public bool moveBoat = false;
-
     private float hullRotationSpeed = 30f;
     private float mastRotationSpeed = 50f;
     private float mastWinchSpeed = 50f;
@@ -28,12 +27,14 @@ public class Boat : MonoBehaviour
 
     void Update()
     {
-        RotateMast();
+        //RotateMast();
         RotateHull();
         MastWinchControl();
 
         mastWinch = Mathf.Clamp(mastWinch, 0, 90);
         mastRotation = Mathf.Clamp(mastRotation, 180 - mastWinch, 180 + mastWinch);
+
+
         //if (wind.direction < 10 && wind.direction > 350) { Debug.Log("tacking"); }
         //else if (wind.direction > 175 && wind.direction < 185) { Debug.Log("gybing"); }
     }
@@ -44,7 +45,6 @@ public class Boat : MonoBehaviour
         mast.transform.localEulerAngles = new Vector3(0f, mastRotation, 0f);
         MoveBoat();
         SideDrag();
-
     }
 
     void RotateMast()
@@ -127,5 +127,12 @@ public class Boat : MonoBehaviour
     public float GetSpeed()
     {
         return rb.velocity.magnitude;
+    }
+
+    public void RotateMastToAngle(float targetRotation, float rotationSpeed)
+    {
+        //mastTargetRotation = targetRotation;
+        mastRotation = Mathf.Lerp(mastRotation, targetRotation, rotationSpeed * Time.deltaTime); ;
+
     }
 }

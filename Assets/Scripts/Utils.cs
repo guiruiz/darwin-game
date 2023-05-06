@@ -57,6 +57,12 @@ public class Utils
     {
         return 360f - rotation;
     }
+    //@todo rethink these methods
+    public static float DegToRotation(float deg)
+    {
+        return (360f - deg);
+    }
+
 
     public static float DegToRad(float deg)
     {
