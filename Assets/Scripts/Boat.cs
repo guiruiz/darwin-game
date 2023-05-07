@@ -34,6 +34,10 @@ public class Boat : MonoBehaviour
         mastWinch = Mathf.Clamp(mastWinch, 0, 90);
         mastRotation = Mathf.Clamp(mastRotation, 180 - mastWinch, 180 + mastWinch);
 
+        Vector3 pos = transform.position;
+        pos.y = 0;
+        transform.position = pos;
+
         //if (wind.direction < 10 && wind.direction > 350) { Debug.Log("tacking"); }
         //else if (wind.direction > 175 && wind.direction < 185) { Debug.Log("gybing"); }
     }

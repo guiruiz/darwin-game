@@ -5,10 +5,10 @@ using UnityEngine;
 public class RopeSpawn : MonoBehaviour
 {
     [SerializeField]
-    GameObject partPrefab, parentObject;
+    GameObject partPrefab, parentObject, ropeTarget, fisrtPart;
 
     [SerializeField]
-    [Range(1, 1000)]
+    [Range(1, 15)]
     int length = 1;
 
     [SerializeField]
@@ -35,6 +35,12 @@ public class RopeSpawn : MonoBehaviour
             Spawn();
             spawn = false;
         }
+
+        if (ropeTarget && fisrtPart)
+        {
+            fisrtPart.transform.position = ropeTarget.transform.position;
+        }
+
     }
 
     void Spawn()
@@ -57,10 +63,18 @@ public class RopeSpawn : MonoBehaviour
                 {
                     tmp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 }
+                tmp.transform.localEulerAngles = new Vector3(-180, -90, 0);
             }
             else
             {
                 tmp.GetComponent<CharacterJoint>().connectedBody = parentObject.transform.Find((parentObject.transform.childCount - 1).ToString()).GetComponent<Rigidbody>();
+            }
+
+            if (x == count - 1)
+            {
+                //tmp.transform.localPosition = new Vector3(-0.14f, 2.48f, 3.86f);
+                tmp.transform.localEulerAngles = new Vector3(90, 0, 90);
+                fisrtPart = tmp;
             }
         }
 

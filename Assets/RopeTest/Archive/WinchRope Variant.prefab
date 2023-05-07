@@ -1,0 +1,1396 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3988374705711759312
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 201153184290467347, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 201153184290467347, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 201153184290467347, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 201153184290467347, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 404168254150098022, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 404168254150098022, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 404168254150098022, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 404168254150098022, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 601914334831539988, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 671281886291909145, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 671281886291909145, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 671281886291909145, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 671281886291909145, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 672419108152130325, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 697553121808244506, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 697553121808244506, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 697553121808244506, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 697553121808244506, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 876363087595637833, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 876363087595637833, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 876363087595637833, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 876363087595637833, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252040838883855301, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531982429673115309, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531982429673115309, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531982429673115309, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531982429673115309, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401512, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401519, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Name
+      value: WinchRope
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552972597271401519, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562176176641828187, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588902742681332171, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588902742681332171, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588902742681332171, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588902742681332171, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610087538237807133, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610087538237807133, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610087538237807133, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610087538237807133, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618508301230205066, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618508301230205066, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618508301230205066, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618508301230205066, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698552377214762303, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698552377214762303, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698552377214762303, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698552377214762303, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717010972208057654, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717010972208057654, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717010972208057654, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717010972208057654, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805942755308687923, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805942755308687923, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805942755308687923, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805942755308687923, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040860262801648111, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040860262801648111, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040860262801648111, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040860262801648111, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260115561897517788, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260115561897517788, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260115561897517788, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260115561897517788, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470841740528084679, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518277129945564605, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635241639753492094, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635241639753492094, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635241639753492094, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635241639753492094, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777609591575118106, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777609591575118106, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777609591575118106, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777609591575118106, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859140163746870666, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859140163746870666, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859140163746870666, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859140163746870666, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999149831627164317, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999149831627164317, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999149831627164317, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999149831627164317, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060957582723200328, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060957582723200328, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060957582723200328, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060957582723200328, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213260852023611631, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213260852023611631, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213260852023611631, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213260852023611631, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271709470349812486, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271709470349812486, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271709470349812486, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271709470349812486, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326168417609881114, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376068362629722126, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376068362629722126, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376068362629722126, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376068362629722126, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400484736977991684, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400484736977991684, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400484736977991684, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400484736977991684, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421181506544213426, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443489092718113342, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748712256447784931, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748712256447784931, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748712256447784931, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748712256447784931, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758996429356069967, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763375797460029862, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832811495337035379, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832811495337035379, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832811495337035379, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832811495337035379, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834183510747172664, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866111627291639762, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866111627291639762, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866111627291639762, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866111627291639762, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902169686507385395, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060240673190091059, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060240673190091059, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060240673190091059, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060240673190091059, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082642525415384244, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082642525415384244, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082642525415384244, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082642525415384244, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217431466846100836, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217431466846100836, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217431466846100836, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217431466846100836, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269861404767209606, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269861404767209606, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269861404767209606, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269861404767209606, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398336261609292641, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409022461745730142, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409022461745730142, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409022461745730142, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409022461745730142, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491069392926773081, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491069392926773081, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491069392926773081, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491069392926773081, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535900757862872922, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535900757862872922, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535900757862872922, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535900757862872922, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550139741673504581, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550139741673504581, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550139741673504581, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550139741673504581, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630575800727961395, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630575800727961395, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630575800727961395, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630575800727961395, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730937623944602538, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891112191574895384, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202965110479755137, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228626961421341109, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348544674801210511, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348544674801210511, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348544674801210511, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348544674801210511, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353290769235886252, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353290769235886252, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353290769235886252, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353290769235886252, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355103616433388307, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355103616433388307, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355103616433388307, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355103616433388307, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365914519413842125, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365914519413842125, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365914519413842125, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365914519413842125, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418916645680127447, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581885150233762665, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581885150233762665, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581885150233762665, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581885150233762665, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641524700298637463, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641524700298637463, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641524700298637463, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641524700298637463, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895422043042273188, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895422043042273188, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895422043042273188, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895422043042273188, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975571038923367282, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975571038923367282, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975571038923367282, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975571038923367282, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093667019238297352, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093667019238297352, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093667019238297352, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093667019238297352, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107452331096303743, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107452331096303743, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107452331096303743, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107452331096303743, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150798187249061352, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150798187249061352, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150798187249061352, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150798187249061352, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221957826998007041, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287821975011410312, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287821975011410312, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287821975011410312, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287821975011410312, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374775885337770552, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484193340751047387, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484193340751047387, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484193340751047387, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484193340751047387, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631832401430958020, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674887966342277324, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836545098497454210, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875470909790927852, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875470909790927852, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875470909790927852, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875470909790927852, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340517015499457179, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340517015499457179, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340517015499457179, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340517015499457179, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706200109364718963, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706200109364718963, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706200109364718963, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706200109364718963, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776470661378844184, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776470661378844184, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776470661378844184, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776470661378844184, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915241563494562068, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938563748839135614, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938563748839135614, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938563748839135614, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938563748839135614, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266556349990857858, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266556349990857858, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266556349990857858, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266556349990857858, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295600144940040830, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295600144940040830, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295600144940040830, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295600144940040830, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320576139681664518, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850592218290274387, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024608363963497307, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033134986179251518, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033134986179251518, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033134986179251518, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.damper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033134986179251518, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_TwistLimitSpring.spring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048889442924964395, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048889442924964395, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048889442924964395, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048889442924964395, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146526982127131028, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162721034901056566, guid: 35b29bb16405c5844a18d3859c41c196,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35b29bb16405c5844a18d3859c41c196, type: 3}
+--- !u!1 &2509852928124988415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1552972597271401519, guid: 35b29bb16405c5844a18d3859c41c196,
+    type: 3}
+  m_PrefabInstance: {fileID: 3988374705711759312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &778053946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509852928124988415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaea520ab47c67748a0592d9309e2545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boomTarget: {fileID: 0}
+  deletePart: 0
+  addPart: 0
+  partPrefab: {fileID: 2982748562291536553, guid: c31af4bb44ab2a4428a9041b715c7f24,
+    type: 3}
+  lastPart: {fileID: 5750337608213748772}
+--- !u!4 &5750337608213748772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8688780959282914292, guid: 35b29bb16405c5844a18d3859c41c196,
+    type: 3}
+  m_PrefabInstance: {fileID: 3988374705711759312}
+  m_PrefabAsset: {fileID: 0}
