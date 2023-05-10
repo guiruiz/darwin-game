@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sail
-  m_Shader: {fileID: -6465566751694194690, guid: 35424439b36537c49b91a12f414fb30c,
+  m_Shader: {fileID: -6465566751694194690, guid: dbe2dc44474b2b34695aca298edacbe2,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -113,9 +113,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _ShakeAmplitude: 0.709
     - _ShakeFreq: 78.6
     - _ShakeHeight: 0.162
-    - _ShakeOffset: 1
+    - _ShakeLength: 19.2
+    - _ShakeOffset: 67.7
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -123,6 +125,17 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _flapAmplitude: 0.102
+    - _flapFrequency: 12.8
+    - _flapTime: 5.98
+    - _h: 1.5
+    - _k: 0.342
+    - _m: 0
+    - _n: 0
+    - _sailConstant: 0.3
+    - _sailForce: -1
+    - _sailYOffset: 0
+    - _yOff: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
