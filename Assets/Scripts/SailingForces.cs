@@ -12,7 +12,7 @@ public class SailingForces : MonoBehaviour
     public Vector2 sailForce { get; private set; }
     public Vector2 waterForce { get; private set; }
     public Vector2 resultForce { get; private set; }
-    public float resultDirection { get; private set; } = 0;
+    public float resultDirection { get; private set; } = 0; // backward < 0 > forward
 
     void Update()
     {

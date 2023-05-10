@@ -20,15 +20,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sail
+  m_Name: SailSheet
   m_Shader: {fileID: -6465566751694194690, guid: dbe2dc44474b2b34695aca298edacbe2,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 3010
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -103,12 +103,12 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Flap_Amp: 0.026
-    - _Flap_Freq: 15.4
-    - _Flap_Speed: 1.94
+    - _Flap_Amp: 0.01
+    - _Flap_Freq: 10
+    - _Flap_Speed: 2
     - _Flap_to_Center: 0
     - _Float: 1
-    - _Force: 1
+    - _Force: 0.36613634
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -116,9 +116,9 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
-    - _QueueOffset: 0
+    - _QueueOffset: 10
     - _ReceiveShadows: 1
-    - _Shadow_Strength: 0.5
+    - _Shadow_Strength: 0.483
     - _ShakeAmplitude: 0.709
     - _ShakeFreq: 78.6
     - _ShakeHeight: 0.162

@@ -102,9 +102,9 @@ public class Boat : MonoBehaviour
 
         if (rb.velocity.magnitude < maxSpeed && moveBoat)
         {
-            float m = (sailingForces.resultDirection > 0) ? speedMultiplier : speedMultiplier / 2;
-            Vector3 f = resultant * m;
-            rb.AddForce(f, ForceMode.Acceleration);
+            float mag = (sailingForces.resultDirection > 0) ? speedMultiplier : speedMultiplier / 2;
+            Vector3 force = resultant * mag;
+            rb.AddForce(force, ForceMode.Acceleration);
         }
 
         Utils.DrawForce(transform.position, Utils.Vector3To2(resultant), Color.green);
